@@ -1,0 +1,35 @@
+@use "/src/scss/mixins.scss";
+@use "/src/scss/colors.scss";
+
+.introContainer {
+  grid-column: first / span end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 93%;
+  @include mixins.pageWidthGrid;
+}
+
+.intro {
+  grid-area: main;
+  display: flex;
+  align-items: center;
+
+  div {
+    flex: 1;
+  }
+
+  .heading {
+    color: colors.$white;
+    font: normal normal 800 60px/80px Montserrat;
+    margin-bottom: 30px;
+  }
+  .subheading {
+    color: colors.$grey;
+    font: normal normal bold 18px/30px Montserrat;
+    margin-bottom: 30px;
+  }
+
+  button {
+    @include mixins.blueButtonStyle;
+  }
+}
