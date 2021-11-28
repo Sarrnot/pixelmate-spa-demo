@@ -1,0 +1,38 @@
+@use "/src/scss/colors.scss";
+@use "/src/scss/mixins.scss";
+
+.signInForm {
+  background-color: colors.$white;
+  margin-left: auto;
+  width: fit-content;
+  padding: 30px;
+
+  .heading {
+    font: normal normal bold 24px/34px Montserrat;
+    margin: 0 0 30px 0;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    input {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    div {
+      input {
+        width: 24px;
+        height: 24px;
+        margin: auto;
+        margin-right: 10px;
+      }
+      display: flex;
+      font: normal normal normal 14px/21px Montserrat;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}
