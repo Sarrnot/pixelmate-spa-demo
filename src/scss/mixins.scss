@@ -1,0 +1,28 @@
+@use "/src/scss/colors.scss";
+
+@mixin pageWidthGrid {
+  display: grid;
+  grid-template-columns: [first] auto [main-start] 65% [main-end] auto [end];
+  grid-template-areas: "left main right";
+  position: relative;
+}
+
+@mixin buttonBorderRadius {
+  border-radius: 30px 30px 30px 0;
+}
+
+@mixin blueButtonStyle {
+  background-color: colors.$primary;
+  @include buttonBorderRadius;
+  border: none;
+  padding: 22px 62px 22px 62px;
+  text-transform: uppercase;
+  color: colors.$white;
+  font: normal normal bold 16px/19px Montserrat;
+  &:hover {
+    cursor: pointer;
+  }
+  img {
+    margin-left: 10px;
+  }
+}
