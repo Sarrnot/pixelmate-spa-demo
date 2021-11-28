@@ -1,0 +1,14 @@
+@use "/src/scss/colors.scss";
+
+.footer {
+  background: transparent linear-gradient(180deg, #161b40 0%, #140f29 100%) 0%
+    0% no-repeat padding-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+
+  div {
+    color: colors.$lightGrey;
+  }
+}
