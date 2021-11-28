@@ -1,0 +1,16 @@
+@use "/src/scss/colors.scss";
+@use "/src/scss/mixins.scss";
+
+.navigationMenu {
+  a {
+    margin-left: 40px;
+    font: normal normal bold 14px/18px Montserrat;
+    color: colors.$white;
+    text-decoration: none;
+  }
+  .signIn {
+    border: 1px solid #ffffff;
+    @include mixins.buttonBorderRadius;
+    padding: 15px 58px 15px 58px;
+  }
+}
