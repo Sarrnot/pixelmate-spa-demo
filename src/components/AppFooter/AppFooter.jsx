@@ -5,7 +5,9 @@ function AppFooter() {
   return (
     <div className={styles.footer}>
       <div>© All rights reserved 2013-2019. Pixelmate s.r.o.</div>
-      <img src={logo} alt='Logo' />
+      <div>
+        <img src={logo} alt='Logo' />
+      </div>
       <div>Zásady ochrany osobních údajů</div>
     </div>
   );

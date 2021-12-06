@@ -5,10 +5,17 @@
     0% no-repeat padding-box;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 40px;
 
   div {
     color: colors.$lightGrey;
+    flex: 1;
+    display: flex;
+    &:nth-child(2) {
+      justify-content: center;
+    }
+    &:nth-child(3) {
+      justify-content: flex-end;
+    }
   }
 }
