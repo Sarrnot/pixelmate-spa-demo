@@ -2,6 +2,14 @@ import { useState } from "react";
 import styles from "./SignInForm.module.scss";
 import arrowIcon from "images/icons/flaticon1557998900-svg.png";
 
+function MandatoryInput({ isValid }) {
+  if (!isValid) {
+    return <p className={styles.mandatoryInput}>Toto pole je povinné</p>;
+  }
+
+  return null;
+}
+
 function SignInForm() {
   const [email, setEmail] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(true);
@@ -52,32 +60,38 @@ function SignInForm() {
     <div className={styles.signInForm}>
       <p className={styles.heading}>Přihlašte se</p>
       <form>
-        <input
-          type='email'
-          placeholder='Váš email'
-          value={email}
-          onChange={emailOnChange}
-          className={`${!emailIsValid && styles.invalid}`}
-        />
-        <input
-          type='password'
-          placeholder='Heslo'
-          value={password}
-          onChange={passwordOnChange}
-          className={`${!passwordIsValid && styles.invalid}`}
-        />
         <div>
+          <input
+            type='email'
+            placeholder='Váš email'
+            value={email}
+            onChange={emailOnChange}
+            className={`${!emailIsValid && styles.invalid}`}
+          />
+          <MandatoryInput isValid={emailIsValid} />
+        </div>
+        <div>
+          <input
+            type='password'
+            placeholder='Heslo'
+            value={password}
+            onChange={passwordOnChange}
+            className={`${!passwordIsValid && styles.invalid}`}
+          />
+          <MandatoryInput isValid={passwordIsValid} />
+        </div>
+        <div className={styles.radioInput}>
           <input
             type='radio'
             id='privacyPolicy'
             value={privacyPolicy}
             onChange={privacyPolicyOnChange}
-            className={`${!privacyPolicyIsValid && styles.invalid}`}
           />
           <label htmlFor='privacyPolicy'>
             Souhlasím se všeobecnými podmínkami a <br />
             Zásadou o ochranně osobních údajů.
           </label>
+          <MandatoryInput isValid={privacyPolicyIsValid} />
         </div>
       </form>
       <button onClick={signInHandler}>
