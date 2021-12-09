@@ -1,0 +1,17 @@
+@use "/src/scss/mixins.scss";
+
+.cardLayoutContainer {
+  @include mixins.pageWidthGrid;
+  background: transparent linear-gradient(165deg, #ecefff66 0%, #ecefff 100%) 0%
+    0% no-repeat padding-box;
+  width: 100%;
+  height: auto;
+}
+
+.cardLayout {
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: main;
+  margin-top: 135px;
+  margin-bottom: 135px;
+}
