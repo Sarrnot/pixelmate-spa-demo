@@ -1,0 +1,48 @@
+@use "/src/scss/mixins.scss";
+
+.designerSearchBar {
+  box-shadow: 0px 4px 35px #0000001f;
+  background-color: white;
+  z-index: 1;
+  grid-area: main;
+  padding: 30px;
+  width: 70%;
+  height: 120px;
+  box-sizing: border-box;
+  justify-self: center;
+  position: relative;
+  align-self: flex-end;
+  transform: translateY(50%);
+  display: flex;
+  align-items: center;
+
+  button {
+    @include mixins.blueButtonStyle;
+  }
+
+  form {
+    flex: 1;
+  }
+
+  .searchInput {
+    margin-right: 23px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    img {
+      position: absolute;
+      left: 22px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    input {
+      border: 1px solid #e0e0e5;
+      width: 100%;
+      padding: 20px;
+      padding-left: 60px;
+      box-sizing: border-box;
+    }
+  }
+}
