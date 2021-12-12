@@ -5,7 +5,7 @@ import { useRef } from "react";
 function DesignerSearchBar(props) {
   const searchInputRef = useRef();
 
-  const onClick = (event) => {
+  const onClickHandler = (event) => {
     props.setSearchInput(searchInputRef.current.value);
   };
 
@@ -13,11 +13,11 @@ function DesignerSearchBar(props) {
     <div className={styles.designerSearchBar}>
       <form>
         <div className={styles.searchInput}>
-          <img src={searchIcon} alt='Search Icon' onClick={onClick} />
+          <img src={searchIcon} alt='Search Icon' onClick={onClickHandler} />
           <input type='text' placeholder='Vyhledávání' ref={searchInputRef} />
         </div>
       </form>
-      <button onClick={onClick}>Vyhledat</button>
+      <button onClick={onClickHandler}>Vyhledat</button>
     </div>
   );
 }
