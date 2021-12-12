@@ -1,7 +1,7 @@
 @use "/src/scss/colors.scss";
 
 .cardContainer {
-  flex-basis: 33%;
+  width: 33%;
   padding: 15px;
   box-sizing: border-box;
 }
@@ -11,6 +11,7 @@
   box-shadow: 0px 20px 70px #16181c1a;
   border-radius: 25px 25px 25px 0px;
   padding: 30px;
-
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
 }
