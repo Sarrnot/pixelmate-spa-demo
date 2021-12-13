@@ -18,6 +18,7 @@
 
   button {
     @include mixins.blueButtonStyle;
+    margin: 0;
   }
 
   form {
