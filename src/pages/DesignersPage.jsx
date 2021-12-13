@@ -1,3 +1,5 @@
+import { AppHeader } from "components/AppHeader";
+import { AppFooter } from "components/AppFooter";
 import { CardLayout } from "components/Card/CardLayout/";
 import { Card } from "components/Card/Card/";
 import { DesignerPreview } from "components/Designer/DesignerPreview";
@@ -40,6 +42,7 @@ export function DesignersPage() {
 
   return (
     <>
+      <AppHeader />
       <WhiteHeader>
         <DesignerSearchBar
           searchInput={searchInput}
@@ -59,6 +62,7 @@ export function DesignersPage() {
           </Card>
         ))}
       </CardLayout>
+      <AppFooter />
     </>
   );
 }

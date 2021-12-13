@@ -5,12 +5,19 @@
   a {
     margin-left: 40px;
     font: normal normal bold 14px/18px Montserrat;
-    color: colors.$white;
+    color: colors.$darkPrimary;
     text-decoration: none;
   }
   .signIn {
-    border: 1px solid #ffffff;
+    border: 1px solid colors.$darkPrimary;
     @include mixins.buttonBorderRadius;
     padding: 15px 58px 15px 58px;
+  }
+
+  &.light {
+    a {
+      border-color: #ffffff;
+      color: colors.$white;
+    }
   }
 }
