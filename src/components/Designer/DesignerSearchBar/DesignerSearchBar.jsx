@@ -5,19 +5,20 @@ import { useRef } from "react";
 function DesignerSearchBar(props) {
   const searchInputRef = useRef();
 
-  const onClickHandler = (event) => {
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
     props.setSearchInput(searchInputRef.current.value);
   };
 
   return (
     <div className={styles.designerSearchBar}>
-      <form>
+      <form onSubmit={onSubmitHandler}>
         <div className={styles.searchInput}>
-          <img src={searchIcon} alt='Search Icon' onClick={onClickHandler} />
+          <img src={searchIcon} alt='Search Icon' onClick={onSubmitHandler} />
           <input type='text' placeholder='Vyhledávání' ref={searchInputRef} />
         </div>
       </form>
-      <button onClick={onClickHandler}>Vyhledat</button>
+      <button onClick={onSubmitHandler}>Vyhledat</button>
     </div>
   );
 }
