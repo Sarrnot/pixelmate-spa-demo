@@ -59,7 +59,7 @@ function SignInForm() {
   return (
     <div className={styles.signInForm}>
       <p className={styles.heading}>Přihlašte se</p>
-      <form>
+      <form onSubmit={signInHandler}>
         <div>
           <input
             type='email'
@@ -93,10 +93,10 @@ function SignInForm() {
           </label>
           <MandatoryInput isValid={privacyPolicyIsValid} />
         </div>
+        <button onClick={signInHandler}>
+          Přihlásit se <img src={arrowIcon} alt='arrowIcon' />
+        </button>
       </form>
-      <button onClick={signInHandler}>
-        Přihlásit se <img src={arrowIcon} alt='arrowIcon' />
-      </button>
     </div>
   );
 }
