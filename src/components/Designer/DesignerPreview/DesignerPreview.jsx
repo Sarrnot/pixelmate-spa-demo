@@ -3,7 +3,10 @@ import mapIcon from "images/icons/Group 3355.svg";
 import arrowIcon from "images/icons/flaticon1557998900-svg.svg";
 
 function DesignerPreview(props) {
-  const onClickHandler = () => {};
+  const onClickHandler = (event) => {
+    event.preventDefault();
+    window.location.href = `/designeri/${props.id}`;
+  };
 
   return (
     <>
