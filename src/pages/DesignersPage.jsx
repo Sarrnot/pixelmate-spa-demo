@@ -58,6 +58,7 @@ export function DesignersPage() {
               email={item.email}
               address={item.address}
               website={item.website}
+              id={item.id}
             />
           </Card>
         ))}
