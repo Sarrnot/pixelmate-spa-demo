@@ -1,0 +1,59 @@
+@use "/src/scss/colors.scss";
+@use "/src/scss/mixins.scss";
+
+.designerDetailContainer {
+  grid-area: main;
+}
+
+.username {
+  font: normal normal medium 20px/30px Montserrat;
+  color: colors.$darkPrimary;
+  margin: 0 0 10px 0;
+}
+
+.name {
+  font: normal normal bold 30px/34px Montserrat;
+  color: colors.$darkPrimary;
+  margin: 0 0 13px 0;
+}
+.email {
+  font: normal normal medium 20px/30px Montserrat;
+  color: colors.$grey;
+  margin: 0 0 36px 0;
+}
+.address {
+  background-color: colors.$primaryLight;
+  margin: 0 0 33px 0;
+  border-radius: 19px;
+  position: relative;
+  padding: 18px;
+  display: flex;
+  img {
+    margin-right: 15px;
+    align-self: flex-start;
+  }
+  p {
+    margin: 0;
+    font: normal normal normal 16px/24px Montserrat;
+  }
+  .heading {
+    font: normal normal bold 18px/22px Montserrat;
+    margin-bottom: 7px;
+  }
+}
+.website {
+  font: normal normal medium 20px/30px Montserrat;
+  color: #1232f9;
+  margin: 0 0 43px 0;
+  text-align: center;
+}
+
+button {
+  @include mixins.buttonBorderRadius;
+  background-color: transparent;
+  border: 1px solid colors.$primary;
+  color: colors.$primary;
+  font: normal normal bold 16px/19px Montserrat;
+  padding: 20px;
+  margin-bottom: 25px;
+}
