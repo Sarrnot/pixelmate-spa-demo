@@ -3,21 +3,50 @@
 
 .designerDetailContainer {
   grid-area: main;
+  display: flex;
+
+  align-items: center;
+
+  & > div {
+    display: flex;
+  }
+
+  .designerDetails {
+    flex: 1;
+    flex-direction: column;
+
+    button {
+      background-color: colors.$primaryLight;
+      border: none;
+      border-radius: 24px;
+      width: fit-content;
+      padding: 15px 34px 15px 34px;
+      img {
+        margin-right: 10px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .img {
+    flex: 2;
+    justify-content: center;
+  }
 }
 
 .username {
-  font: normal normal medium 20px/30px Montserrat;
+  font: normal normal medium 24px/30px Montserrat;
   color: colors.$darkPrimary;
   margin: 0 0 10px 0;
 }
 
 .name {
-  font: normal normal bold 30px/34px Montserrat;
+  font: normal normal bold 38px/34px Montserrat;
   color: colors.$darkPrimary;
   margin: 0 0 13px 0;
 }
 .email {
-  font: normal normal medium 20px/30px Montserrat;
+  font: normal normal medium 24px/30px Montserrat;
   color: colors.$grey;
   margin: 0 0 36px 0;
 }
@@ -48,12 +77,18 @@
   text-align: center;
 }
 
-button {
-  @include mixins.buttonBorderRadius;
-  background-color: transparent;
-  border: 1px solid colors.$primary;
-  color: colors.$primary;
-  font: normal normal bold 16px/19px Montserrat;
-  padding: 20px;
-  margin-bottom: 25px;
+.company {
+  box-shadow: 0px 20px 70px #16181c1a;
+  border-radius: 25px 25px 25px 0px;
+  padding: 30px;
+
+  p {
+    font: normal normal normal 18px/30px Montserrat;
+    margin: 0;
+  }
+
+  .heading {
+    font: normal normal bold 18px/34px Montserrat;
+    margin-bottom: 14px;
+  }
 }
