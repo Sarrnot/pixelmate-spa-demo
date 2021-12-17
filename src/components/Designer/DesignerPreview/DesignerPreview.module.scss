@@ -52,4 +52,7 @@ button {
   font: normal normal bold 16px/19px Montserrat;
   padding: 20px;
   margin-bottom: 25px;
+  &:hover {
+    cursor: pointer;
+  }
 }
