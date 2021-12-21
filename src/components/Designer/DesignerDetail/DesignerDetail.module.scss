@@ -20,7 +20,18 @@
       border: none;
       border-radius: 24px;
       width: fit-content;
+      color: colors.$primary;
       padding: 15px 34px 15px 34px;
+      margin-bottom: 25px;
+      font: normal normal bold 16px/19px Montserrat;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
       img {
         margin-right: 10px;
         transform: rotate(180deg);
