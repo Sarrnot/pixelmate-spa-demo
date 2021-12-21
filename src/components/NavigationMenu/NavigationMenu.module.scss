@@ -2,20 +2,25 @@
 @use "/src/scss/mixins.scss";
 
 .navigationMenu {
-  a {
+  & > * {
     margin-left: 40px;
     font: normal normal bold 14px/18px Montserrat;
     color: colors.$darkPrimary;
     text-decoration: none;
   }
   .signIn {
-    border: 1px solid colors.$darkPrimary;
+    border: 1px solid colors.$primary;
     @include mixins.buttonBorderRadius;
     padding: 15px 58px 15px 58px;
+    background-color: transparent;
+    color: colors.$primary;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &.light {
-    a {
+    & > * {
       border-color: #ffffff;
       color: colors.$white;
     }
