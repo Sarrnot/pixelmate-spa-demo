@@ -49,6 +49,7 @@ function SignInModal(props) {
     }
     if (password) {
       console.log(email, password);
+      modalCloseHandler();
     }
   };
 
