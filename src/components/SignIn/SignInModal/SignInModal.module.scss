@@ -1,0 +1,73 @@
+@use "/src/scss/mixins.scss";
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 33%;
+  border-radius: 6px;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    font: normal normal bold 24px/34px Montserrat;
+  }
+
+  p {
+    margin-bottom: 37px;
+  }
+
+  & > button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    &:hover {
+      cursor: pointer;
+    }
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div {
+      position: relative;
+      margin-bottom: 25px;
+      width: 50%;
+      input {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        border: 1px solid #e0e0e5;
+
+        &.invalid {
+          border: 1px solid red;
+        }
+      }
+    }
+
+    button {
+      @include mixins.blueButtonStyle;
+      display: flex;
+      align-items: center;
+    }
+
+    .mandatoryInput {
+      position: absolute;
+      margin: 0;
+      font-size: 10px;
+      color: red;
+      bottom: -15px;
+    }
+  }
+}
