@@ -44,7 +44,7 @@
   text-align: center;
 }
 
-button {
+.showProfile {
   @include mixins.buttonBorderRadius;
   background-color: transparent;
   border: 1px solid colors.$primary;

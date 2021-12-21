@@ -24,7 +24,7 @@ function DesignerPreview(props) {
       <a href='' className={styles.website}>
         {props.website}
       </a>
-      <button onClick={onClickHandler}>
+      <button className={styles.showProfile} onClick={onClickHandler}>
         Zobrazit profil <img src={arrowIcon} alt='arrowIcon' />
       </button>
     </>
