@@ -4,3 +4,8 @@ $grey: #8e929f;
 $white: #ffffff;
 $lightGrey: #c7c7c7;
 $darkPrimary: #140f29;
+
+@mixin toPrimary {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(98%) saturate(3930%)
+    hue-rotate(236deg) brightness(104%) contrast(120%);
+}
