@@ -1,13 +1,42 @@
 @use "/src/scss/colors.scss";
 @use "/src/scss/mixins.scss";
+@use "/src/scss/responsive.scss";
 
 .navigationMenu {
-  & > * {
-    margin-left: 40px;
-    font: normal normal bold 14px/18px Montserrat;
-    color: colors.$darkPrimary;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  .burgerIconButton {
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+      img {
+        @include colors.toPrimary;
+      }
+    }
+
+    @include responsive.wlg {
+      display: none;
+    }
   }
+
+  .classicMenu {
+    display: none;
+
+    @include responsive.wlg {
+      display: inline;
+    }
+
+    & > * {
+      margin-left: 40px;
+      font: normal normal bold 14px/18px Montserrat;
+      color: colors.$darkPrimary;
+      text-decoration: none;
+    }
+  }
+
   .signIn {
     border: 1px solid colors.$primary;
     @include mixins.buttonBorderRadius;
@@ -20,9 +49,40 @@
   }
 
   &.light {
-    & > * {
+    * {
       border-color: #ffffff;
       color: colors.$white;
     }
+  }
+
+  * {
+    &:hover {
+      color: colors.$primary;
+      border-color: colors.$primary;
+    }
+  }
+}
+
+.sidebarMenu {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  font: normal normal bold 28px/18px Montserrat;
+
+  a {
+    text-decoration: none;
+    color: colors.$darkPrimary;
+    &:hover {
+      color: colors.$primary;
+    }
+  }
+  & > * {
+    margin-bottom: 40px;
+  }
+
+  button {
+    @include mixins.blueButtonStyle;
+    order: -1;
+    width: fit-content;
   }
 }
