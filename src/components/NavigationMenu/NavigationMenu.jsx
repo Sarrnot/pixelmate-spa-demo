@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./NavigationMenu.module.scss";
 import { SignInModal } from "components/SignIn/SignInModal";
 import BurgerMenuIcon from "images/icons/burgerMenuIcon.svg";
+import BurgerMenuIconDark from "images/icons/burgerMenuIcon_dark.svg";
 import Drawer from "@mui/material/Drawer";
 
 function NavigationMenu(props) {
@@ -31,7 +32,10 @@ function NavigationMenu(props) {
   return (
     <div className={`${styles.navigationMenu} ${styles[props.theme]}`}>
       <button className={styles.burgerIconButton} onClick={handleSidebarOpen}>
-        <img src={BurgerMenuIcon} alt='burgerMenuIcon' />
+        <img
+          src={props.theme ? BurgerMenuIcon : BurgerMenuIconDark}
+          alt='burgerMenuIcon'
+        />
       </button>
       <Drawer open={sidebarShow} onClose={handleSidebarClose} anchor='right'>
         <div className={styles.sidebarMenu}>{navMenuOptions}</div>
