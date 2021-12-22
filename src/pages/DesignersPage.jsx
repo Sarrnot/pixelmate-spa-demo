@@ -27,18 +27,17 @@ export function DesignersPage() {
         setLoading(false);
       })
       .catch(() => {
-        setLoading(false);
         setError(true);
+        setLoading(false);
       });
   }, []);
 
-  if (loading) {
-    return <p>Loading spinner placeholder</p>;
-  }
-
-  if (error) {
-    return <p>Something went wrong placeholder</p>;
-  }
+  const requestStatus = (
+    <>
+      {loading && <p>Loading spinner placeholder</p>}
+      {error && <p>Something went wrong placeholder</p>}
+    </>
+  );
 
   return (
     <>
@@ -50,18 +49,20 @@ export function DesignersPage() {
         />
       </WhiteHeader>
       <CardLayout>
-        {filteredDesignersList.map((item) => (
-          <Card key={item.id}>
-            <DesignerPreview
-              name={item.name}
-              username={item.username}
-              email={item.email}
-              address={item.address}
-              website={item.website}
-              id={item.id}
-            />
-          </Card>
-        ))}
+        {loading || error
+          ? requestStatus
+          : filteredDesignersList.map((item) => (
+              <Card key={item.id}>
+                <DesignerPreview
+                  name={item.name}
+                  username={item.username}
+                  email={item.email}
+                  address={item.address}
+                  website={item.website}
+                  id={item.id}
+                />
+              </Card>
+            ))}
       </CardLayout>
       <AppFooter />
     </>

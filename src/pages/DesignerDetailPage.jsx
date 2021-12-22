@@ -21,31 +21,34 @@ export function DesignerDetailPage() {
         setLoading(false);
       })
       .catch(() => {
-        setLoading(false);
         setError(true);
+        setLoading(false);
       });
   }, []);
 
-  if (loading) {
-    return <p>Loading spinner placeholder</p>;
-  }
-
-  if (error) {
-    return <p>Something went wrong placeholder</p>;
-  }
+  const requestStatus = (
+    <>
+      {loading && <p>Loading spinner placeholder</p>}
+      {error && <p>Something went wrong placeholder</p>}
+    </>
+  );
 
   return (
     <>
       <AppHeader />
       <Viewport>
-        <DesignerDetail
-          name={designerDetails.name}
-          username={designerDetails.username}
-          email={designerDetails.email}
-          address={designerDetails.address}
-          website={designerDetails.website}
-          company={designerDetails.company}
-        />
+        {loading || error ? (
+          requestStatus
+        ) : (
+          <DesignerDetail
+            name={designerDetails.name}
+            username={designerDetails.username}
+            email={designerDetails.email}
+            address={designerDetails.address}
+            website={designerDetails.website}
+            company={designerDetails.company}
+          />
+        )}
       </Viewport>
       <AppFooter />
     </>
